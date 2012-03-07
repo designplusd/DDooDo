@@ -16,7 +16,6 @@
 		DB117DF21507395700CC8174 /* DDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB117DF11507395700CC8174 /* DDAppDelegate.m */; };
 		DB117DF51507395700CC8174 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB117DF31507395700CC8174 /* MainStoryboard_iPhone.storyboard */; };
 		DB117DF81507395700CC8174 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB117DF61507395700CC8174 /* MainStoryboard_iPad.storyboard */; };
-		DB117DFB1507395700CC8174 /* DDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB117DFA1507395700CC8174 /* DDViewController.m */; };
 		DB117E031507395700CC8174 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117E021507395700CC8174 /* SenTestingKit.framework */; };
 		DB117E041507395800CC8174 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117DE11507395700CC8174 /* UIKit.framework */; };
 		DB117E051507395800CC8174 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117DE31507395700CC8174 /* Foundation.framework */; };
@@ -49,8 +48,6 @@
 		DB117DF11507395700CC8174 /* DDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDAppDelegate.m; sourceTree = "<group>"; };
 		DB117DF41507395700CC8174 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		DB117DF71507395700CC8174 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		DB117DF91507395700CC8174 /* DDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDViewController.h; sourceTree = "<group>"; };
-		DB117DFA1507395700CC8174 /* DDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDViewController.m; sourceTree = "<group>"; };
 		DB117E011507395700CC8174 /* DDooDoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DDooDoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB117E021507395700CC8174 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		DB117E0A1507395800CC8174 /* DDooDoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DDooDoTests-Info.plist"; sourceTree = "<group>"; };
@@ -120,11 +117,9 @@
 				DB117DF11507395700CC8174 /* DDAppDelegate.m */,
 				DB117DF31507395700CC8174 /* MainStoryboard_iPhone.storyboard */,
 				DB117DF61507395700CC8174 /* MainStoryboard_iPad.storyboard */,
-				DB117DF91507395700CC8174 /* DDViewController.h */,
-				DB117DFA1507395700CC8174 /* DDViewController.m */,
-				DB117DE81507395700CC8174 /* Supporting Files */,
 				03A9A3541507457B00CAB08B /* DDMainTableViewController.h */,
 				03A9A3551507457B00CAB08B /* DDMainTableViewController.m */,
+				DB117DE81507395700CC8174 /* Supporting Files */,
 			);
 			path = DDooDo;
 			sourceTree = "<group>";
@@ -270,7 +265,6 @@
 			files = (
 				DB117DEE1507395700CC8174 /* main.m in Sources */,
 				DB117DF21507395700CC8174 /* DDAppDelegate.m in Sources */,
-				DB117DFB1507395700CC8174 /* DDViewController.m in Sources */,
 				03A9A3561507457B00CAB08B /* DDMainTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
