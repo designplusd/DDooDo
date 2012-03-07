@@ -1,0 +1,460 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB117DE21507395700CC8174 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117DE11507395700CC8174 /* UIKit.framework */; };
+		DB117DE41507395700CC8174 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117DE31507395700CC8174 /* Foundation.framework */; };
+		DB117DE61507395700CC8174 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117DE51507395700CC8174 /* CoreGraphics.framework */; };
+		DB117DEC1507395700CC8174 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB117DEA1507395700CC8174 /* InfoPlist.strings */; };
+		DB117DEE1507395700CC8174 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB117DED1507395700CC8174 /* main.m */; };
+		DB117DF21507395700CC8174 /* DDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB117DF11507395700CC8174 /* DDAppDelegate.m */; };
+		DB117DF51507395700CC8174 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB117DF31507395700CC8174 /* MainStoryboard_iPhone.storyboard */; };
+		DB117DF81507395700CC8174 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB117DF61507395700CC8174 /* MainStoryboard_iPad.storyboard */; };
+		DB117DFB1507395700CC8174 /* DDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB117DFA1507395700CC8174 /* DDViewController.m */; };
+		DB117E031507395700CC8174 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117E021507395700CC8174 /* SenTestingKit.framework */; };
+		DB117E041507395800CC8174 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117DE11507395700CC8174 /* UIKit.framework */; };
+		DB117E051507395800CC8174 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117DE31507395700CC8174 /* Foundation.framework */; };
+		DB117E0D1507395800CC8174 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB117E0B1507395800CC8174 /* InfoPlist.strings */; };
+		DB117E101507395800CC8174 /* DDooDoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB117E0F1507395800CC8174 /* DDooDoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB117E061507395800CC8174 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB117DD41507395700CC8174 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB117DDC1507395700CC8174;
+			remoteInfo = DDooDo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB117DDD1507395700CC8174 /* DDooDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDooDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB117DE11507395700CC8174 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DB117DE31507395700CC8174 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DB117DE51507395700CC8174 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DB117DE91507395700CC8174 /* DDooDo-Info.plist */ = {isa = PBXFileReference; path = "DDooDo-Info.plist"; sourceTree = "<group>"; };
+		DB117DEB1507395700CC8174 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DB117DED1507395700CC8174 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB117DEF1507395700CC8174 /* DDooDo-Prefix.pch */ = {isa = PBXFileReference; path = "DDooDo-Prefix.pch"; sourceTree = "<group>"; };
+		DB117DF01507395700CC8174 /* DDAppDelegate.h */ = {isa = PBXFileReference; path = DDAppDelegate.h; sourceTree = "<group>"; };
+		DB117DF11507395700CC8174 /* DDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDAppDelegate.m; sourceTree = "<group>"; };
+		DB117DF41507395700CC8174 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		DB117DF71507395700CC8174 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		DB117DF91507395700CC8174 /* DDViewController.h */ = {isa = PBXFileReference; path = DDViewController.h; sourceTree = "<group>"; };
+		DB117DFA1507395700CC8174 /* DDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDViewController.m; sourceTree = "<group>"; };
+		DB117E011507395700CC8174 /* DDooDoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DDooDoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB117E021507395700CC8174 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		DB117E0A1507395800CC8174 /* DDooDoTests-Info.plist */ = {isa = PBXFileReference; path = "DDooDoTests-Info.plist"; sourceTree = "<group>"; };
+		DB117E0C1507395800CC8174 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DB117E0E1507395800CC8174 /* DDooDoTests.h */ = {isa = PBXFileReference; path = DDooDoTests.h; sourceTree = "<group>"; };
+		DB117E0F1507395800CC8174 /* DDooDoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDooDoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB117DDA1507395700CC8174 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB117DE21507395700CC8174 /* UIKit.framework in Frameworks */,
+				DB117DE41507395700CC8174 /* Foundation.framework in Frameworks */,
+				DB117DE61507395700CC8174 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB117DFD1507395700CC8174 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB117E031507395700CC8174 /* SenTestingKit.framework in Frameworks */,
+				DB117E041507395800CC8174 /* UIKit.framework in Frameworks */,
+				DB117E051507395800CC8174 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB117DD21507395700CC8174 = {
+			isa = PBXGroup;
+			children = (
+				DB117DE71507395700CC8174 /* DDooDo */,
+				DB117E081507395800CC8174 /* DDooDoTests */,
+				DB117DE01507395700CC8174 /* Frameworks */,
+				DB117DDE1507395700CC8174 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB117DDE1507395700CC8174 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB117DDD1507395700CC8174 /* DDooDo.app */,
+				DB117E011507395700CC8174 /* DDooDoTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB117DE01507395700CC8174 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB117DE11507395700CC8174 /* UIKit.framework */,
+				DB117DE31507395700CC8174 /* Foundation.framework */,
+				DB117DE51507395700CC8174 /* CoreGraphics.framework */,
+				DB117E021507395700CC8174 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB117DE71507395700CC8174 /* DDooDo */ = {
+			isa = PBXGroup;
+			children = (
+				DB117DF01507395700CC8174 /* DDAppDelegate.h */,
+				DB117DF11507395700CC8174 /* DDAppDelegate.m */,
+				DB117DF31507395700CC8174 /* MainStoryboard_iPhone.storyboard */,
+				DB117DF61507395700CC8174 /* MainStoryboard_iPad.storyboard */,
+				DB117DF91507395700CC8174 /* DDViewController.h */,
+				DB117DFA1507395700CC8174 /* DDViewController.m */,
+				DB117DE81507395700CC8174 /* Supporting Files */,
+			);
+			path = DDooDo;
+			sourceTree = "<group>";
+		};
+		DB117DE81507395700CC8174 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB117DE91507395700CC8174 /* DDooDo-Info.plist */,
+				DB117DEA1507395700CC8174 /* InfoPlist.strings */,
+				DB117DED1507395700CC8174 /* main.m */,
+				DB117DEF1507395700CC8174 /* DDooDo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB117E081507395800CC8174 /* DDooDoTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB117E0E1507395800CC8174 /* DDooDoTests.h */,
+				DB117E0F1507395800CC8174 /* DDooDoTests.m */,
+				DB117E091507395800CC8174 /* Supporting Files */,
+			);
+			path = DDooDoTests;
+			sourceTree = "<group>";
+		};
+		DB117E091507395800CC8174 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB117E0A1507395800CC8174 /* DDooDoTests-Info.plist */,
+				DB117E0B1507395800CC8174 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB117DDC1507395700CC8174 /* DDooDo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB117E131507395800CC8174 /* Build configuration list for PBXNativeTarget "DDooDo" */;
+			buildPhases = (
+				DB117DD91507395700CC8174 /* Sources */,
+				DB117DDA1507395700CC8174 /* Frameworks */,
+				DB117DDB1507395700CC8174 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DDooDo;
+			productName = DDooDo;
+			productReference = DB117DDD1507395700CC8174 /* DDooDo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB117E001507395700CC8174 /* DDooDoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB117E161507395800CC8174 /* Build configuration list for PBXNativeTarget "DDooDoTests" */;
+			buildPhases = (
+				DB117DFC1507395700CC8174 /* Sources */,
+				DB117DFD1507395700CC8174 /* Frameworks */,
+				DB117DFE1507395700CC8174 /* Resources */,
+				DB117DFF1507395700CC8174 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB117E071507395800CC8174 /* PBXTargetDependency */,
+			);
+			name = DDooDoTests;
+			productName = DDooDoTests;
+			productReference = DB117E011507395700CC8174 /* DDooDoTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB117DD41507395700CC8174 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DD;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "nobird01@gmail.com";
+			};
+			buildConfigurationList = DB117DD71507395700CC8174 /* Build configuration list for PBXProject "DDooDo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DB117DD21507395700CC8174;
+			productRefGroup = DB117DDE1507395700CC8174 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB117DDC1507395700CC8174 /* DDooDo */,
+				DB117E001507395700CC8174 /* DDooDoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB117DDB1507395700CC8174 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB117DEC1507395700CC8174 /* InfoPlist.strings in Resources */,
+				DB117DF51507395700CC8174 /* MainStoryboard_iPhone.storyboard in Resources */,
+				DB117DF81507395700CC8174 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB117DFE1507395700CC8174 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB117E0D1507395800CC8174 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DB117DFF1507395700CC8174 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB117DD91507395700CC8174 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB117DEE1507395700CC8174 /* main.m in Sources */,
+				DB117DF21507395700CC8174 /* DDAppDelegate.m in Sources */,
+				DB117DFB1507395700CC8174 /* DDViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB117DFC1507395700CC8174 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB117E101507395800CC8174 /* DDooDoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB117E071507395800CC8174 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB117DDC1507395700CC8174 /* DDooDo */;
+			targetProxy = DB117E061507395800CC8174 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB117DEA1507395700CC8174 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB117DEB1507395700CC8174 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DB117DF31507395700CC8174 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB117DF41507395700CC8174 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		DB117DF61507395700CC8174 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB117DF71507395700CC8174 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		DB117E0B1507395800CC8174 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB117E0C1507395800CC8174 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB117E111507395800CC8174 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB117E121507395800CC8174 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB117E141507395800CC8174 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DDooDo/DDooDo-Prefix.pch";
+				INFOPLIST_FILE = "DDooDo/DDooDo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DB117E151507395800CC8174 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DDooDo/DDooDo-Prefix.pch";
+				INFOPLIST_FILE = "DDooDo/DDooDo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DB117E171507395800CC8174 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DDooDo.app/DDooDo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DDooDo/DDooDo-Prefix.pch";
+				INFOPLIST_FILE = "DDooDoTests/DDooDoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DB117E181507395800CC8174 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DDooDo.app/DDooDo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DDooDo/DDooDo-Prefix.pch";
+				INFOPLIST_FILE = "DDooDoTests/DDooDoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB117DD71507395700CC8174 /* Build configuration list for PBXProject "DDooDo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB117E111507395800CC8174 /* Debug */,
+				DB117E121507395800CC8174 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB117E131507395800CC8174 /* Build configuration list for PBXNativeTarget "DDooDo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB117E141507395800CC8174 /* Debug */,
+				DB117E151507395800CC8174 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DB117E161507395800CC8174 /* Build configuration list for PBXNativeTarget "DDooDoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB117E171507395800CC8174 /* Debug */,
+				DB117E181507395800CC8174 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB117DD41507395700CC8174 /* Project object */;
+}
