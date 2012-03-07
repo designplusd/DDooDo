@@ -24,24 +24,6 @@
     return self;
 }
 
-- (void)loadToDoData
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docPath = [paths objectAtIndex:0];
-    NSString *docFileName = [[NSString alloc] initWithFormat:@"%@/Todo.sav", docPath];
-    
-    NSLog(@"Load Todo Data from file");
-    _todoDatas = [[NSMutableArray alloc] initWithContentsOfFile:docFileName];
-}
-
-- (void)saveTodoData
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docPath = [paths objectAtIndex:0];
-    NSString *docFileName = [[NSString alloc] initWithFormat:@"%@/Todo.sav", docPath];
-    [_todoDatas writeToFile:docFileName atomically:YES];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

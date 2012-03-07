@@ -21,6 +21,7 @@
 		DB117E051507395800CC8174 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117DE31507395700CC8174 /* Foundation.framework */; };
 		DB117E0D1507395800CC8174 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB117E0B1507395800CC8174 /* InfoPlist.strings */; };
 		DB117E101507395800CC8174 /* DDooDoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB117E0F1507395800CC8174 /* DDooDoTests.m */; };
+		DBFB073515074A7800844A72 /* DDToDoData.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFB073415074A7800844A72 /* DDToDoData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		DB117E0C1507395800CC8174 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB117E0E1507395800CC8174 /* DDooDoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDooDoTests.h; sourceTree = "<group>"; };
 		DB117E0F1507395800CC8174 /* DDooDoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDooDoTests.m; sourceTree = "<group>"; };
+		DBFB073315074A7800844A72 /* DDToDoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDToDoData.h; sourceTree = "<group>"; };
+		DBFB073415074A7800844A72 /* DDToDoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDToDoData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				DB117DF61507395700CC8174 /* MainStoryboard_iPad.storyboard */,
 				03A9A3541507457B00CAB08B /* DDMainTableViewController.h */,
 				03A9A3551507457B00CAB08B /* DDMainTableViewController.m */,
+				DBFB073315074A7800844A72 /* DDToDoData.h */,
+				DBFB073415074A7800844A72 /* DDToDoData.m */,
 				DB117DE81507395700CC8174 /* Supporting Files */,
 			);
 			path = DDooDo;
@@ -266,6 +271,7 @@
 				DB117DEE1507395700CC8174 /* main.m in Sources */,
 				DB117DF21507395700CC8174 /* DDAppDelegate.m in Sources */,
 				03A9A3561507457B00CAB08B /* DDMainTableViewController.m in Sources */,
+				DBFB073515074A7800844A72 /* DDToDoData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
