@@ -9,16 +9,39 @@
 #import "DDViewController.h"
 
 @interface DDViewController ()
-
+{
+    NSMutableArray *_todoDatas;
+}
 @end
 
 @implementation DDViewController
+
+
+- (void)loadToDoData
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docPath = [paths objectAtIndex:0];
+    NSString *docFileName = [[NSString alloc] initWithFormat:@"%@/Todo.sav", docPath];
+    
+    NSLog(@"Load Todo Data from file");
+    _todoDatas = [[NSMutableArray alloc] initWithContentsOfFile:docFileName];
+}
+
+- (void)saveTodoData
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docPath = [paths objectAtIndex:0];
+    NSString *docFileName = [[NSString alloc] initWithFormat:@"%@/Todo.sav", docPath];
+    [_todoDatas writeToFile:docFileName atomically:YES];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSLog(@"abracatabra");
+    NSLog(@"Program Start");
+    
+    [self loadToDoData];
 }
 
 - (void)viewDidUnload
