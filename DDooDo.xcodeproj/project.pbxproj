@@ -38,21 +38,21 @@
 		DB117DE11507395700CC8174 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DB117DE31507395700CC8174 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB117DE51507395700CC8174 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		DB117DE91507395700CC8174 /* DDooDo-Info.plist */ = {isa = PBXFileReference; path = "DDooDo-Info.plist"; sourceTree = "<group>"; };
+		DB117DE91507395700CC8174 /* DDooDo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DDooDo-Info.plist"; sourceTree = "<group>"; };
 		DB117DEB1507395700CC8174 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB117DED1507395700CC8174 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DB117DEF1507395700CC8174 /* DDooDo-Prefix.pch */ = {isa = PBXFileReference; path = "DDooDo-Prefix.pch"; sourceTree = "<group>"; };
-		DB117DF01507395700CC8174 /* DDAppDelegate.h */ = {isa = PBXFileReference; path = DDAppDelegate.h; sourceTree = "<group>"; };
+		DB117DEF1507395700CC8174 /* DDooDo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DDooDo-Prefix.pch"; sourceTree = "<group>"; };
+		DB117DF01507395700CC8174 /* DDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDAppDelegate.h; sourceTree = "<group>"; };
 		DB117DF11507395700CC8174 /* DDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDAppDelegate.m; sourceTree = "<group>"; };
 		DB117DF41507395700CC8174 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		DB117DF71507395700CC8174 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		DB117DF91507395700CC8174 /* DDViewController.h */ = {isa = PBXFileReference; path = DDViewController.h; sourceTree = "<group>"; };
+		DB117DF91507395700CC8174 /* DDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDViewController.h; sourceTree = "<group>"; };
 		DB117DFA1507395700CC8174 /* DDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDViewController.m; sourceTree = "<group>"; };
 		DB117E011507395700CC8174 /* DDooDoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DDooDoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB117E021507395700CC8174 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		DB117E0A1507395800CC8174 /* DDooDoTests-Info.plist */ = {isa = PBXFileReference; path = "DDooDoTests-Info.plist"; sourceTree = "<group>"; };
+		DB117E0A1507395800CC8174 /* DDooDoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DDooDoTests-Info.plist"; sourceTree = "<group>"; };
 		DB117E0C1507395800CC8174 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DB117E0E1507395800CC8174 /* DDooDoTests.h */ = {isa = PBXFileReference; path = DDooDoTests.h; sourceTree = "<group>"; };
+		DB117E0E1507395800CC8174 /* DDooDoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDooDoTests.h; sourceTree = "<group>"; };
 		DB117E0F1507395800CC8174 /* DDooDoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDooDoTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
