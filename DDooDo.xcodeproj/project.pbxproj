@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03A9A3561507457B00CAB08B /* DDMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A9A3551507457B00CAB08B /* DDMainTableViewController.m */; };
 		DB117DE21507395700CC8174 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117DE11507395700CC8174 /* UIKit.framework */; };
 		DB117DE41507395700CC8174 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117DE31507395700CC8174 /* Foundation.framework */; };
 		DB117DE61507395700CC8174 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117DE51507395700CC8174 /* CoreGraphics.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03A9A3541507457B00CAB08B /* DDMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMainTableViewController.h; sourceTree = "<group>"; };
+		03A9A3551507457B00CAB08B /* DDMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMainTableViewController.m; sourceTree = "<group>"; };
 		DB117DDD1507395700CC8174 /* DDooDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDooDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB117DE11507395700CC8174 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DB117DE31507395700CC8174 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -120,6 +123,8 @@
 				DB117DF91507395700CC8174 /* DDViewController.h */,
 				DB117DFA1507395700CC8174 /* DDViewController.m */,
 				DB117DE81507395700CC8174 /* Supporting Files */,
+				03A9A3541507457B00CAB08B /* DDMainTableViewController.h */,
+				03A9A3551507457B00CAB08B /* DDMainTableViewController.m */,
 			);
 			path = DDooDo;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				DB117DEE1507395700CC8174 /* main.m in Sources */,
 				DB117DF21507395700CC8174 /* DDAppDelegate.m in Sources */,
 				DB117DFB1507395700CC8174 /* DDViewController.m in Sources */,
+				03A9A3561507457B00CAB08B /* DDMainTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
