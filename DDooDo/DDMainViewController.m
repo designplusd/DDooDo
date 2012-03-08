@@ -32,7 +32,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
@@ -48,23 +47,27 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (IBAction)textfiledDone:(UITextField *)sender {
-    [self insertNewObject:sender.text];
+- (IBAction)dismissKeyboard:(id)sender {
+    [self.todoTextField resignFirstResponder];
 }
 
+- (IBAction)textfieldDone:(UITextField *)sender {
+    [self insertNewObject:sender.text];
+}
 
 - (void)insertNewObject:(id)sender
 {
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
-    [_objects insertObject:sender atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    
+    int curPosition = _objects.count;
+    
+    [_objects insertObject:sender atIndex:curPosition];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:curPosition inSection:0];
     [self.todoTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
-
-
-
 
 #pragma mark - Table View
 

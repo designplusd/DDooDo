@@ -47,7 +47,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
-                                            <action selector="textfiledDone:" destination="7Ws-HZ-Orz" eventType="editingDidEndOnExit" id="6qD-y8-Gnj"/>
+                                            <action selector="textfieldDone:" destination="7Ws-HZ-Orz" eventType="editingDidEndOnExit" id="Z2X-zZ-srp"/>
+                                            <outlet property="delegate" destination="7Ws-HZ-Orz" id="zVQ-39-CXS"/>
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TcG-lf-BuN">
@@ -108,6 +109,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Ne1-pl-Vaj" appends="YES" id="0j0-G0-exL"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="g6F-gv-gM7"/>
                     <connections>
@@ -115,6 +120,11 @@
                         <outlet property="todoTextField" destination="1E2-hx-Hyu" id="pCC-eZ-gaH"/>
                     </connections>
                 </viewController>
+                <tapGestureRecognizer id="Ne1-pl-Vaj">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="7Ws-HZ-Orz" id="2bY-u5-0DO"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="558" y="84"/>
         </scene>
@@ -123,6 +133,7 @@
         <class className="DDMainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DDMainViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backgroundTouched:"/>
                 <relationship kind="outlet" name="todoTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="todoTextField" candidateClass="UITextField"/>
             </relationships>
