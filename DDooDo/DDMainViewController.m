@@ -14,11 +14,13 @@
 }
 @property (strong, nonatomic) IBOutlet UITextField *todoTextField;
 @property (strong, nonatomic) IBOutlet UITableView *todoTableView;
+@property (strong, nonatomic) IBOutlet UILabel *todayLabel;
 @end
 
 @implementation DDMainViewController
 @synthesize todoTextField;
 @synthesize todoTableView;
+@synthesize todayLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,14 +34,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTime:) userInfo:nil repeats:YES]; 
 }
 
 - (void)viewDidUnload
 {
+
     [self setTodoTableView:nil];
     [self setTodoTextField:nil];
+    [self setTodayLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+}
+
+// 3초마다 불려오는 메서드 
+- (void) onTime:(NSTimer *)timer {
+    
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"MM-dd"];
+    
+    NSDate *now = [NSDate date];
+    // NSString *strDate = [[NSString alloc] initWithFormat:@"%@",now];
+    NSString *showDate = [df stringFromDate:[NSDate date]];
+    self.todayLabel.text = showDate;
+    
+    //[timer invalidate];// -> 타이머 끄고 싶을때 사용
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -53,6 +74,12 @@
 
 - (IBAction)textfieldDone:(UITextField *)sender {
     [self insertNewObject:sender.text];
+}
+- (IBAction)editButtonTouchDown:(UIButton *)sender {
+    if (self.todoTableView.isEditing)
+        [self.todoTableView setEditing:FALSE animated:TRUE];
+    else
+        [self.todoTableView setEditing:TRUE animated:TRUE];
 }
 
 - (void)insertNewObject:(id)sender

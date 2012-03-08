@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03BEFB46150897FC0011B800 /* Paper_texture1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03BEFB45150897FC0011B800 /* Paper_texture1.jpg */; };
 		03DF6FB41508619B005A5DC4 /* DDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DF6FB31508619B005A5DC4 /* DDMainViewController.m */; };
 		DB117DE21507395700CC8174 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117DE11507395700CC8174 /* UIKit.framework */; };
 		DB117DE41507395700CC8174 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117DE31507395700CC8174 /* Foundation.framework */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03BEFB45150897FC0011B800 /* Paper_texture1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paper_texture1.jpg; sourceTree = "<group>"; };
 		03DF6FB21508619B005A5DC4 /* DDMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMainViewController.h; sourceTree = "<group>"; };
 		03DF6FB31508619B005A5DC4 /* DDMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDMainViewController.m; sourceTree = "<group>"; };
 		DB117DDD1507395700CC8174 /* DDooDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DDooDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +118,7 @@
 		DB117DE71507395700CC8174 /* DDooDo */ = {
 			isa = PBXGroup;
 			children = (
+				03BEFB45150897FC0011B800 /* Paper_texture1.jpg */,
 				DB117DF01507395700CC8174 /* DDAppDelegate.h */,
 				DB117DF11507395700CC8174 /* DDAppDelegate.m */,
 				DB117DF31507395700CC8174 /* MainStoryboard_iPhone.storyboard */,
@@ -234,6 +237,7 @@
 				DB117DEC1507395700CC8174 /* InfoPlist.strings in Resources */,
 				DB117DF51507395700CC8174 /* MainStoryboard_iPhone.storyboard in Resources */,
 				DB117DF81507395700CC8174 /* MainStoryboard_iPad.storyboard in Resources */,
+				03BEFB46150897FC0011B800 /* Paper_texture1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
