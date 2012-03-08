@@ -89,6 +89,10 @@
                                         </view>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="7Ws-HZ-Orz" id="Q6G-RO-c53"/>
+                                    <outlet property="delegate" destination="7Ws-HZ-Orz" id="fK3-Jm-bOJ"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Qj0-yp-DHd">
                                 <rect key="frame" x="248" y="423" width="72" height="37"/>
@@ -115,6 +119,15 @@
             <point key="canvasLocation" x="558" y="84"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="DDMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DDMainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="todoTableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="todoTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

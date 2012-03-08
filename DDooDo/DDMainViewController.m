@@ -12,8 +12,8 @@
 {
     NSMutableArray *_objects;
 }
-@property (weak, nonatomic) IBOutlet UITextField *todoTextField;
-@property (weak, nonatomic) IBOutlet UITableView *todoTableView;
+@property (strong, nonatomic) IBOutlet UITextField *todoTextField;
+@property (strong, nonatomic) IBOutlet UITableView *todoTableView;
 @end
 
 @implementation DDMainViewController
@@ -49,7 +49,7 @@
 }
 
 - (IBAction)textfiledDone:(UITextField *)sender {
-    [self insertNewObject:@"haha"];
+    [self insertNewObject:sender.text];
 }
 
 
