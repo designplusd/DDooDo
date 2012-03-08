@@ -1,14 +1,14 @@
 //
-//  DDAppDelegate.m
-//  DDooDo
+//  HappinessAppDelegate.m
+//  Happiness
 //
-//  Created by Sangsoo Park on 12. 3. 7..
-//  Copyright (c) 2012년 nobird01@gmail.com. All rights reserved.
+//  Created by 동인 이 on 12. 3. 8..
+//  Copyright (c) 2012년 __MyCompanyName__. All rights reserved.
 //
 
-#import "DDAppDelegate.h"
+#import "HappinessAppDelegate.h"
 
-@implementation DDAppDelegate
+@implementation HappinessAppDelegate
 
 @synthesize window = _window;
 
@@ -26,7 +26,6 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    [UIApplication sharedApplication].applicationIconBadgeNumber = 3;
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
