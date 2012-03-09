@@ -100,7 +100,6 @@
 		DB117DD21507395700CC8174 = {
 			isa = PBXGroup;
 			children = (
-				DBAB7DF01509D78600C222FB /* EventKit.framework */,
 				DB117DE71507395700CC8174 /* DDooDo */,
 				DB117E081507395800CC8174 /* DDooDoTests */,
 				DB117DE01507395700CC8174 /* Frameworks */,
@@ -120,6 +119,7 @@
 		DB117DE01507395700CC8174 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DBAB7DF01509D78600C222FB /* EventKit.framework */,
 				DB117DE11507395700CC8174 /* UIKit.framework */,
 				DB117DE31507395700CC8174 /* Foundation.framework */,
 				DB117DE51507395700CC8174 /* CoreGraphics.framework */,
