@@ -143,6 +143,29 @@
     [customCell.todoLabel setFont:[UIFont fontWithName:@"Nanum Pen Script" size:20]];
     
     customCell.todoLabel.text = [todoData getItem:(indexPath.row)].title;
+    
+    
+    // 취소선 그리기
+    
+//    if([todoData getItem:(indexPath.row)].isChecked == TRUE)
+//    {
+        customCell.strikeThroughImage.alpha = 0.5;
+        
+        CGSize textLabelSize = [customCell.todoLabel.text sizeWithFont:customCell.todoLabel.font /*constrainedToSize:constrainedSize*/];
+        
+        NSLog(@"text label width: %f", textLabelSize.width);
+        
+        CGRect frame = customCell.strikeThroughImage.frame;
+        frame.size.width = textLabelSize.width;
+        customCell.strikeThroughImage.frame = frame;
+        
+        // customCell.strikeThroughImage.viewPrintFormatter
+        
+        //textLabelSize.width
+//    }
+//    else {
+//        customCell.strikeThroughImage.alpha = 0;
+//    }
 
     return customCell;
 }

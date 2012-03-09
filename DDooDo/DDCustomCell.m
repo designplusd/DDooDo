@@ -10,6 +10,7 @@
 
 @implementation DDCustomCell
 @synthesize todoLabel;
+@synthesize strikeThroughImage;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

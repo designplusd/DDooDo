@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		036AD600150A2D6000A14931 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 036AD5FF150A2D6000A14931 /* line.png */; };
 		0388B48715099B6900AFEDB9 /* _0014_Pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 0388B48515099B6900AFEDB9 /* _0014_Pin.png */; };
 		0388B48815099B6900AFEDB9 /* _0019_Preferences.png in Resources */ = {isa = PBXBuildFile; fileRef = 0388B48615099B6900AFEDB9 /* _0019_Preferences.png */; };
 		0388B4901509ABDB00AFEDB9 /* DDCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0388B48F1509ABDB00AFEDB9 /* DDCustomCell.m */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		036AD5FF150A2D6000A14931 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		0388B48515099B6900AFEDB9 /* _0014_Pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _0014_Pin.png; sourceTree = "<group>"; };
 		0388B48615099B6900AFEDB9 /* _0019_Preferences.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _0019_Preferences.png; sourceTree = "<group>"; };
 		0388B48E1509ABDA00AFEDB9 /* DDCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCustomCell.h; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		DB117DE81507395700CC8174 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				036AD5FF150A2D6000A14931 /* line.png */,
 				0388B48515099B6900AFEDB9 /* _0014_Pin.png */,
 				0388B48615099B6900AFEDB9 /* _0019_Preferences.png */,
 				03B635F71508B8EB007255C8 /* NanumPen.ttf */,
@@ -259,6 +262,7 @@
 				03B635F81508B8EB007255C8 /* NanumPen.ttf in Resources */,
 				0388B48715099B6900AFEDB9 /* _0014_Pin.png in Resources */,
 				0388B48815099B6900AFEDB9 /* _0019_Preferences.png in Resources */,
+				036AD600150A2D6000A14931 /* line.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -79,7 +79,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="39" id="Sxe-Vf-AmG" customClass="DDCustomCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="39" id="Sxe-Vf-AmG" customClass="DDCustomCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="39"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -93,11 +93,16 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" image="line.png" id="hZa-Yu-3MM">
+                                                    <rect key="frame" x="9" y="17" width="265" height="11"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="strikeThroughImage" destination="hZa-Yu-3MM" id="XBB-rF-nWj"/>
                                             <outlet property="todoLabel" destination="BmF-Ll-uXF" id="Ov5-WZ-SbK"/>
                                         </connections>
                                     </tableViewCell>
@@ -146,11 +151,13 @@
         <image name="Paper_texture1.jpg" width="1000" height="1409"/>
         <image name="_0014_Pin.png" width="48" height="48"/>
         <image name="_0019_Preferences.png" width="48" height="48"/>
+        <image name="line.png" width="1280" height="24"/>
     </resources>
     <classes>
         <class className="DDCustomCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DDCustomCell.h"/>
             <relationships>
+                <relationship kind="outlet" name="strikeThroughImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="todoLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
