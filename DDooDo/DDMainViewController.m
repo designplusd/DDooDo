@@ -113,9 +113,11 @@
 //        _objects = [[NSMutableArray alloc] init];
 //    }
     
-    int curPosition = todoData.Items.count;
+    int curPosition = todoData.count;
     
-    [todoData.Items insertObject:sender atIndex:curPosition];
+    [todoData insertItem:curPosition : [NSDate date] : sender : FALSE];
+    
+    // [todoData.Items insertObject:sender atIndex:curPosition];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:curPosition inSection:0];
     [self.todoTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -133,7 +135,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return todoData.Items.count;
+    return todoData.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -141,7 +143,7 @@
     DDCustomCell *customCell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     [customCell.todoLabel setFont:[UIFont fontWithName:@"Nanum Pen Script" size:20]];
     
-    customCell.todoLabel.text = [todoData.Items objectAtIndex:indexPath.row];
+    customCell.todoLabel.text = [todoData getItem:(indexPath.row)].title;
 
     return customCell;
 }
@@ -155,7 +157,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [todoData.Items removeObjectAtIndex:indexPath.row];
+        [todoData removeItem:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -165,7 +167,7 @@
  // Override to support rearranging the table view.
  - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
  {
-     NSObject *o = [todoData.Items objectAtIndex:fromIndexPath.row];
+     NSObject *o = [todoData getItem:fromIndexPath.row];
      
      if(toIndexPath.row > fromIndexPath.row) //moving a row down
          for(int x = toIndexPath.row; x > fromIndexPath.row; x--)

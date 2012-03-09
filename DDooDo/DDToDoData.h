@@ -8,11 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+@class DDTodoItem;
+
 @interface DDToDoData : NSObject{
-    NSMutableArray *data;
+    NSMutableArray *_data;
 }
 
-- (NSMutableArray *)Items;
+//- (NSMutableArray *)Items;
+
+- (void) insertItem: (int) index : (NSDate*) date : (NSString*) title : (BOOL) isChecked;
+
+- (void) removeItem: (int) index;
+
+- (DDTodoItem*) getItem: (int) index;
+
+- (int) count;
 
 - (void)loadToDoData;
 
@@ -24,6 +34,11 @@
 {
     NSDate *date;
     NSString *title;
-    BOOL *isChecked;
+    BOOL isChecked;
 }
+
+@property (nonatomic) NSDate *date;
+@property (nonatomic) NSString *title;
+@property (nonatomic) BOOL isChecked;
+
 @end
