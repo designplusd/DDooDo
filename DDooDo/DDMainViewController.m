@@ -36,6 +36,10 @@
     [super viewDidLoad];
     
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTime:) userInfo:nil repeats:YES]; 
+    
+    [todayLabel setFont:[UIFont fontWithName:@"Nanum Pen Script" size:20]];
+
+    [self displayDate];
 }
 
 - (void)viewDidUnload
@@ -50,17 +54,34 @@
 
 // 3초마다 불려오는 메서드 
 - (void) onTime:(NSTimer *)timer {
+    [self displayDate];
+ 
+}
+
+- (void) displayDate {
+    NSLocale *locale = [NSLocale currentLocale];
+    //NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"ko_KR"]; // 2012. 3. 8.
+    //NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]; // 3/8/2012
+    //NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"]; // 8/3/2012
     
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"MM-dd"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init]; // 초기화
+    [dateFormatter setLocale:locale]; // 현재 장비 설정 로케일 적용
     
-    NSDate *now = [NSDate date];
-    // NSString *strDate = [[NSString alloc] initWithFormat:@"%@",now];
-    NSString *showDate = [df stringFromDate:[NSDate date]];
-    self.todayLabel.text = showDate;
+    // 날짜 구하기
     
-    //[timer invalidate];// -> 타이머 끄고 싶을때 사용
+    // 월/일 순서를 템플릿을 통해서 바르게 얻어오도록 한다. 
+    // 3월 8일의 표현법 미국식 3/9/2012 , 영국식 9/3/2012, 한국식 2012. 3. 9.
+    NSString *dateComponents = @"y/M/d";
+    NSString *dateFormat = [NSDateFormatter dateFormatFromTemplate:dateComponents options:0 locale:locale];
     
+    dateFormatter.dateFormat= dateFormat;    
+    NSString *dateOfLocale = [[dateFormatter stringFromDate:[NSDate date]] capitalizedString];
+    
+    //요일 구하기
+    [dateFormatter setDateFormat:@"EEEE"];
+    NSString *weekday = [dateFormatter stringFromDate:[NSDate date]];
+    
+    self.todayLabel.text = [NSString stringWithFormat:@"%@ %@", dateOfLocale, weekday];   
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
