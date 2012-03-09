@@ -32,7 +32,7 @@
 
 @end
 
-@interface DDTodoItem : NSObject
+@interface DDTodoItem : NSObject <NSCoding>
 {
     NSDate *date;
     NSString *title;

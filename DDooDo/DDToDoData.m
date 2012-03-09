@@ -1,4 +1,4 @@
-//
+벼//
 //  DDToDoData.m
 //  DDooDo
 //
@@ -101,22 +101,26 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docPath = [paths objectAtIndex:0];
     NSString *docFileName = [[NSString alloc] initWithFormat:@"%@/Todo.sav", docPath];
-
-    NSLog(@"_data Count 1 - %d", _data.count);
     
-    NSMutableArray *tmpData = [[NSMutableArray alloc] initWithContentsOfFile:docFileName];
+    NSData *dataArea = [NSData dataWithContentsOfFile:docFileName];
+    if (!dataArea)
+        return;
+    
+    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:dataArea];
+  
+    int count = [unarchiver decodeIntForKey:@"ToDoDataCount"];
+
     [_data removeAllObjects];
     
-    NSLog(@"tmpData Count 2 - %d", tmpData.count);
+    for (int i = 0; i < count; ++i)
+    {
+        NSString *keyStr = [[NSString alloc] initWithFormat:@"ToDoData%d", i];
+        DDTodoItem *curItem = [unarchiver decodeObjectForKey:keyStr];
+        if (curItem)
+            [_data addObject:curItem];
+    }
     
-    NSLog(@"_data Count 2 - %d", _data.count);
-    
-    [_data addObjectsFromArray:tmpData];
-    
-    NSLog(@"_data Count 3 - %d", _data.count);
-    
-    [tmpData removeAllObjects];
-    tmpData = nil;
+    [unarchiver finishDecoding];
 }
 
 - (void)saveDataToFile
@@ -124,7 +128,23 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docPath = [paths objectAtIndex:0];
     NSString *docFileName = [[NSString alloc] initWithFormat:@"%@/Todo.sav", docPath];
-    [_data writeToFile:docFileName atomically:YES];
+    
+    NSMutableData *dataArea = [NSMutableData data];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:dataArea];
+
+    [archiver encodeInt:_data.count forKey:@"ToDoDataCount"];
+    
+    for (int i = 0; i < _data.count; ++i)
+    {
+        NSString *keyStr = [[NSString alloc] initWithFormat:@"ToDoData%d", i];
+        DDTodoItem *curItem = [_data objectAtIndex:i];
+        
+        [archiver encodeObject:curItem forKey:keyStr];
+    }
+    
+    [archiver finishEncoding];
+
+    [dataArea writeToFile:docFileName atomically:YES];
 }
 
 - (void)loadData
@@ -140,11 +160,26 @@
 @end
 
 
-
 @implementation DDTodoItem
 
 @synthesize date = _date;
 @synthesize title = _title;
 @synthesize isChecked = _isChecked;
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:_date forKey:@"TodoItemDate"];
+    [aCoder encodeObject:_title forKey:@"TodoItemTitle"];
+    [aCoder encodeBool:_isChecked forKey:@"TodoItemIsChecked"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    _date = [aDecoder decodeObjectForKey:@"TodoItemDate"];
+    _title = [aDecoder decodeObjectForKey:@"TodoItemTitle"];
+    _isChecked = [aDecoder decodeBoolForKey:@"TodoItemIsChecked"];
+
+    return self;
+}
 
 @end

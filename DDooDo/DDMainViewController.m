@@ -48,7 +48,6 @@
 
 - (void)viewDidUnload
 {
-
     [self setTodoTableView:nil];
     [self setTodoTextField:nil];
     [self setTodayLabel:nil];
@@ -115,7 +114,6 @@
 {
     int curPosition = todoData.count;
 
-    
     [todoData insertItem:curPosition : [NSDate date] : sender : FALSE];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:curPosition inSection:0];
