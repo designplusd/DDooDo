@@ -9,6 +9,7 @@
 #import "DDCustomCell.h"
 
 @implementation DDCustomCell
+@synthesize todoLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

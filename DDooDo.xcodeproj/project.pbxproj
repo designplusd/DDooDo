@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0388B48715099B6900AFEDB9 /* _0014_Pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 0388B48515099B6900AFEDB9 /* _0014_Pin.png */; };
 		0388B48815099B6900AFEDB9 /* _0019_Preferences.png in Resources */ = {isa = PBXBuildFile; fileRef = 0388B48615099B6900AFEDB9 /* _0019_Preferences.png */; };
+		0388B4901509ABDB00AFEDB9 /* DDCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0388B48F1509ABDB00AFEDB9 /* DDCustomCell.m */; };
 		03B635F81508B8EB007255C8 /* NanumPen.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B635F71508B8EB007255C8 /* NanumPen.ttf */; };
 		03BEFB46150897FC0011B800 /* Paper_texture1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 03BEFB45150897FC0011B800 /* Paper_texture1.jpg */; };
 		03DF6FB41508619B005A5DC4 /* DDMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DF6FB31508619B005A5DC4 /* DDMainViewController.m */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		0388B48515099B6900AFEDB9 /* _0014_Pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _0014_Pin.png; sourceTree = "<group>"; };
 		0388B48615099B6900AFEDB9 /* _0019_Preferences.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _0019_Preferences.png; sourceTree = "<group>"; };
+		0388B48E1509ABDA00AFEDB9 /* DDCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCustomCell.h; sourceTree = "<group>"; };
+		0388B48F1509ABDB00AFEDB9 /* DDCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCustomCell.m; sourceTree = "<group>"; };
 		03B635F71508B8EB007255C8 /* NanumPen.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumPen.ttf; sourceTree = "<group>"; };
 		03BEFB45150897FC0011B800 /* Paper_texture1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paper_texture1.jpg; sourceTree = "<group>"; };
 		03DF6FB21508619B005A5DC4 /* DDMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDMainViewController.h; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				DB117DF61507395700CC8174 /* MainStoryboard_iPad.storyboard */,
 				03DF6FB21508619B005A5DC4 /* DDMainViewController.h */,
 				03DF6FB31508619B005A5DC4 /* DDMainViewController.m */,
+				0388B48E1509ABDA00AFEDB9 /* DDCustomCell.h */,
+				0388B48F1509ABDB00AFEDB9 /* DDCustomCell.m */,
 				DBFB073315074A7800844A72 /* DDToDoData.h */,
 				DBFB073415074A7800844A72 /* DDToDoData.m */,
 				DB117DE81507395700CC8174 /* Supporting Files */,
@@ -288,6 +293,7 @@
 				DB117DF21507395700CC8174 /* DDAppDelegate.m in Sources */,
 				DBFB073515074A7800844A72 /* DDToDoData.m in Sources */,
 				03DF6FB41508619B005A5DC4 /* DDMainViewController.m in Sources */,
+				0388B4901509ABDB00AFEDB9 /* DDCustomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

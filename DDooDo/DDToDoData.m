@@ -9,12 +9,26 @@
 #import "DDToDoData.h"
 
 @implementation DDToDoData
-@synthesize dataList = _dataList;
+//@synthesize dataList = _dataList;
 
--(NSMutableArray *)dataList
+-(id)init {
+    if ( self = [super init] ) {
+        if (!data) {
+            data = [[NSMutableArray alloc] init];
+        }
+    }
+    return self;                      // self => c++에서의 this.
+}
+
+
+-(NSMutableArray *)Items
 {
+    if (!data) {
+        data = [[NSMutableArray alloc] init];
+    }
+    
     /////////
-    return nil;
+    return data;
 }
 
 - (void)loadToDoData
@@ -24,7 +38,7 @@
     NSString *docFileName = [[NSString alloc] initWithFormat:@"%@/Todo.sav", docPath];
     
     NSLog(@"Load Todo Data from file");
-    _dataList = [[NSMutableArray alloc] initWithContentsOfFile:docFileName];
+    data = [[NSMutableArray alloc] initWithContentsOfFile:docFileName];
 }
 
 - (void)saveTodoData
@@ -32,7 +46,7 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docPath = [paths objectAtIndex:0];
     NSString *docFileName = [[NSString alloc] initWithFormat:@"%@/Todo.sav", docPath];
-    [_dataList writeToFile:docFileName atomically:YES];
+    [data writeToFile:docFileName atomically:YES];
 }
 
 

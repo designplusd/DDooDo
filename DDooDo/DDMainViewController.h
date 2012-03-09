@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DDCustomCell.h"
+#import "DDToDoData.h"
 
 @interface DDMainViewController : UIViewController <UITableViewDelegate, UITableViewDelegate>
 

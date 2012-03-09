@@ -10,7 +10,8 @@
 
 @interface DDMainViewController ()
 {
-    NSMutableArray *_objects;
+    // NSMutableArray *_objects;
+    DDToDoData *todoData;
 }
 @property (strong, nonatomic) IBOutlet UITextField *todoTextField;
 @property (strong, nonatomic) IBOutlet UITableView *todoTableView;
@@ -38,7 +39,10 @@
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTime:) userInfo:nil repeats:YES]; 
     
     [todayLabel setFont:[UIFont fontWithName:@"Nanum Pen Script" size:20]];
-
+    [todoTextField setFont:[UIFont fontWithName:@"Nanum Pen Script" size:20]];
+    
+    todoData = [[DDToDoData alloc]init];
+    
     [self displayDate];
 }
 
@@ -105,16 +109,19 @@
 
 - (void)insertNewObject:(id)sender
 {
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
+//    if (!_objects) {
+//        _objects = [[NSMutableArray alloc] init];
+//    }
     
-    int curPosition = _objects.count;
+    int curPosition = todoData.Items.count;
     
-    [_objects insertObject:sender atIndex:curPosition];
+    [todoData.Items insertObject:sender atIndex:curPosition];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:curPosition inSection:0];
     [self.todoTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    // 입력창 초기화
+    todoTextField.text = @"";
 }
 
 #pragma mark - Table View
@@ -126,19 +133,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return todoData.Items.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    if (cell == nil)
-    {
-        
-    }
-    NSString *object = [_objects objectAtIndex:indexPath.row];
-    cell.textLabel.text = object;
-    return cell;
+    DDCustomCell *customCell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    [customCell.todoLabel setFont:[UIFont fontWithName:@"Nanum Pen Script" size:20]];
+    
+    customCell.todoLabel.text = [todoData.Items objectAtIndex:indexPath.row];
+
+    return customCell;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -150,7 +155,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
+        [todoData.Items removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -160,16 +165,16 @@
  // Override to support rearranging the table view.
  - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
  {
-     NSObject *o = [_objects objectAtIndex:fromIndexPath.row];
+     NSObject *o = [todoData.Items objectAtIndex:fromIndexPath.row];
      
      if(toIndexPath.row > fromIndexPath.row) //moving a row down
          for(int x = toIndexPath.row; x > fromIndexPath.row; x--)
-             [_objects replaceObjectAtIndex:x-1 withObject:[_objects objectAtIndex:x]];
+             [todoData.Items replaceObjectAtIndex:x-1 withObject:[todoData.Items objectAtIndex:x]];
      else //moving a row up
          for(int x = toIndexPath.row; x < fromIndexPath.row; x++)
-             [_objects replaceObjectAtIndex:x+1 withObject:[_objects objectAtIndex:x]];
+             [todoData.Items replaceObjectAtIndex:x+1 withObject:[todoData.Items objectAtIndex:x]];
      
-     [_objects replaceObjectAtIndex:toIndexPath.row withObject:o];
+     [todoData.Items replaceObjectAtIndex:toIndexPath.row withObject:o];
      
      [tableView reloadData];
  }

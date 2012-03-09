@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface DDCustomCell : UITableViewCell
-
+@property (nonatomic, weak) IBOutlet UILabel *todoLabel;
 @end
