@@ -157,20 +157,29 @@
     }
 }
 
-/*
  // Override to support rearranging the table view.
  - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
  {
+     NSObject *o = [_objects objectAtIndex:fromIndexPath.row];
+     
+     if(toIndexPath.row > fromIndexPath.row) //moving a row down
+         for(int x = toIndexPath.row; x > fromIndexPath.row; x--)
+             [_objects replaceObjectAtIndex:x-1 withObject:[_objects objectAtIndex:x]];
+     else //moving a row up
+         for(int x = toIndexPath.row; x < fromIndexPath.row; x++)
+             [_objects replaceObjectAtIndex:x+1 withObject:[_objects objectAtIndex:x]];
+     
+     [_objects replaceObjectAtIndex:toIndexPath.row withObject:o];
+     
+     [tableView reloadData];
  }
- */
 
-/*
  // Override to support conditional rearranging of the table view.
  - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
  {
  // Return NO if you do not want the item to be re-orderable.
  return YES;
  }
- */
+
 
 @end
