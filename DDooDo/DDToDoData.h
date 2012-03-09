@@ -8,22 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DDToDoData : NSObject{
+@interface DDToDoData : NSObject
+{
     NSMutableArray *data;
 }
 
 - (NSMutableArray *)Items;
-
-- (void)loadToDoData;
-
-- (void)saveTodoData;
-
+- (void)loadData;
+- (void)saveData;
 @end
 
 @interface DDTodoItem : NSObject
 {
     NSDate *date;
     NSString *title;
-    BOOL *isChecked;
+    BOOL isChecked;
+    NSString *identifier;
 }
 @end

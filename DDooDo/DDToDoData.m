@@ -6,6 +6,8 @@
 //  Copyright (c) 2012년 nobird01@gmail.com. All rights reserved.
 //
 
+#import <EventKit/EventKit.h>
+
 #import "DDToDoData.h"
 
 @implementation DDToDoData
@@ -31,17 +33,52 @@
     return data;
 }
 
-- (void)loadToDoData
+
+- (NSString *) SaveEvent:(NSString *)title :(NSDate *)date
+{
+    EKEventStore *store = [[EKEventStore alloc] init];
+    EKCalendar *calendar = store.defaultCalendarForNewEvents;
+    EKEvent *event = [EKEvent eventWithEventStore:store];
+    
+    event.title = title;
+    event.calendar = calendar;
+    
+    if (date) {
+        event.startDate = date;
+        event.endDate = [date dateByAddingTimeInterval:60 * 60];
+    }
+    else {
+        event.allDay = TRUE;
+    }
+    
+    BOOL saved = [store saveEvent:event span:EKSpanThisEvent error:NULL];
+    
+    NSString *result;
+    if (saved == TRUE)
+        result = [event eventIdentifier];
+    else
+        result =  nil;
+
+    return result;
+}
+
+-(void) RemoveEvent:(NSString *)identifier
+{
+    EKEventStore *store = [[EKEventStore alloc] init];
+    EKEvent *event = [store eventWithIdentifier:identifier];
+    
+    [store removeEvent:event span:EKSpanThisEvent error:NULL];
+}
+
+- (void)loadDataFromFile
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docPath = [paths objectAtIndex:0];
     NSString *docFileName = [[NSString alloc] initWithFormat:@"%@/Todo.sav", docPath];
-    
-    NSLog(@"Load Todo Data from file");
     data = [[NSMutableArray alloc] initWithContentsOfFile:docFileName];
 }
 
-- (void)saveTodoData
+- (void)saveDataToFile
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docPath = [paths objectAtIndex:0];
@@ -49,5 +86,14 @@
     [data writeToFile:docFileName atomically:YES];
 }
 
+- (void)loadData
+{
+    [self loadDataFromFile];
+}
+
+- (void)saveData
+{
+    [self saveDataToFile];
+}
 
 @end
