@@ -18,15 +18,17 @@
 
 - (void) insertItem: (int) index : (NSDate*) date : (NSString*) title : (BOOL) isChecked;
 
+- (void) insertItem: (int) index : (DDTodoItem*) item;
+
 - (void) removeItem: (int) index;
 
 - (DDTodoItem*) getItem: (int) index;
 
 - (int) count;
 
-- (void)loadToDoData;
+- (void)loadData;
 
-- (void)saveTodoData;
+- (void)saveData;
 
 @end
 
@@ -35,6 +37,7 @@
     NSDate *date;
     NSString *title;
     BOOL isChecked;
+    NSString *identifier;
 }
 
 @property (nonatomic) NSDate *date;

@@ -10,7 +10,6 @@
 
 @interface DDMainViewController ()
 {
-    // NSMutableArray *_objects;
     DDToDoData *todoData;
 }
 @property (strong, nonatomic) IBOutlet UITextField *todoTextField;
@@ -42,6 +41,7 @@
     [todoTextField setFont:[UIFont fontWithName:@"Nanum Pen Script" size:20]];
     
     todoData = [[DDToDoData alloc]init];
+    [todoData loadData];
     
     [self displayDate];
 }
@@ -109,18 +109,15 @@
 
 - (void)insertNewObject:(id)sender
 {
-//    if (!_objects) {
-//        _objects = [[NSMutableArray alloc] init];
-//    }
-    
     int curPosition = todoData.count;
+
     
     [todoData insertItem:curPosition : [NSDate date] : sender : FALSE];
     
-    // [todoData.Items insertObject:sender atIndex:curPosition];
-    
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:curPosition inSection:0];
     [self.todoTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    [todoData saveData];
     
     // 입력창 초기화
     todoTextField.text = @"";
@@ -167,18 +164,19 @@
  // Override to support rearranging the table view.
  - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
  {
-     NSObject *o = [todoData getItem:fromIndexPath.row];
+     int fromIndex = fromIndexPath.row;
+     int toIndex = toIndexPath.row;
+
      
-     if(toIndexPath.row > fromIndexPath.row) //moving a row down
-         for(int x = toIndexPath.row; x > fromIndexPath.row; x--)
-             [todoData.Items replaceObjectAtIndex:x-1 withObject:[todoData.Items objectAtIndex:x]];
-     else //moving a row up
-         for(int x = toIndexPath.row; x < fromIndexPath.row; x++)
-             [todoData.Items replaceObjectAtIndex:x+1 withObject:[todoData.Items objectAtIndex:x]];
+     if (fromIndex == toIndex)
+         return;
      
-     [todoData.Items replaceObjectAtIndex:toIndexPath.row withObject:o];
-     
+     id tmpItem = [todoData getItem:fromIndex];
+     [todoData removeItem:fromIndex];
+     [todoData insertItem:toIndex : tmpItem];
+
      [tableView reloadData];
+     [todoData saveData];
  }
 
  // Override to support conditional rearranging of the table view.
