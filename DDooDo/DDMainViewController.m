@@ -42,7 +42,9 @@
     
     todoData = [[DDToDoData alloc]init];
     [todoData loadData];
-    
+
+    [UIApplication sharedApplication].applicationIconBadgeNumber = todoData.remainToDoCount;
+
     [self displayDate];
 }
 
@@ -53,6 +55,9 @@
     [self setTodayLabel:nil];
     
     [todoData saveData];
+    
+    [UIApplication sharedApplication].applicationIconBadgeNumber = todoData.remainToDoCount;
+    
     todoData = nil;
     
     [super viewDidUnload];
@@ -122,6 +127,8 @@
     
     [todoData saveData];
     
+    [UIApplication sharedApplication].applicationIconBadgeNumber = todoData.remainToDoCount;
+    
     // 입력창 초기화
     todoTextField.text = @"";
 }
@@ -187,30 +194,28 @@
     }
 }
 
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
-     int fromIndex = fromIndexPath.row;
-     int toIndex = toIndexPath.row;
+// Override to support rearranging the table view.
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+{
+    int fromIndex = fromIndexPath.row;
+    int toIndex = toIndexPath.row;
 
-     
-     if (fromIndex == toIndex)
+    if (fromIndex == toIndex)
          return;
-     
-     id tmpItem = [todoData getItem:fromIndex];
-     [todoData removeItem:fromIndex];
-     [todoData insertItem:toIndex : tmpItem];
 
-     [tableView reloadData];
-     [todoData saveData];
- }
+    id tmpItem = [todoData getItem:fromIndex];
+    [todoData removeItem:fromIndex];
+    [todoData insertItem:toIndex : tmpItem];
 
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
+    [tableView reloadData];
+    [todoData saveData];
+}
 
+// Override to support conditional rearranging of the table view.
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the item to be re-orderable.
+    return YES;
+}
 
 @end

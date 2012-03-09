@@ -26,6 +26,8 @@
 
 - (int) count;
 
+- (int) remainToDoCount;
+
 - (void)loadData;
 
 - (void)saveData;

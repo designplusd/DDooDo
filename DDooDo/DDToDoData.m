@@ -27,7 +27,7 @@
     DDTodoItem* item = [[DDTodoItem alloc] init];
     item.date = date;
     item.title = title;
-    item.isChecked = isChecked;    
+    item.isChecked = isChecked;
     
     [_data insertObject:item atIndex:index];
 }
@@ -53,6 +53,18 @@
     return _data.count;
 }
 
+- (int) remainToDoCount
+{
+    int cnt = 0;
+    for (int i = 0; i < _data.count; ++i)
+    {
+        DDTodoItem *curItem = [_data objectAtIndex:i];
+        if (curItem.isChecked == FALSE)
+            ++cnt;
+    }
+    
+    return cnt;
+}
 
 -(NSMutableArray *)Items
 {

@@ -10,7 +10,7 @@
 #import "DDCustomCell.h"
 #import "DDToDoData.h"
 
-@interface DDMainViewController : UIViewController <UITableViewDelegate, UITableViewDelegate>
+@interface DDMainViewController : UIViewController <UITableViewDelegate>
 
 @end
 
