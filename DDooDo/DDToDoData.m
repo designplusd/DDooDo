@@ -11,7 +11,6 @@
 #import "DDToDoData.h"
 
 @implementation DDToDoData
-//@synthesize dataList = _dataList;
 
 -(id)init {
     if ( self = [super init] ) {
@@ -42,14 +41,9 @@
     
     event.title = title;
     event.calendar = calendar;
-    
-    if (date) {
-        event.startDate = date;
-        event.endDate = [date dateByAddingTimeInterval:60 * 60];
-    }
-    else {
-        event.allDay = TRUE;
-    }
+    event.startDate = date;
+    event.endDate = [date dateByAddingTimeInterval:60 * 60];
+    event.allDay = TRUE;
     
     BOOL saved = [store saveEvent:event span:EKSpanThisEvent error:NULL];
     
@@ -57,7 +51,7 @@
     if (saved == TRUE)
         result = [event eventIdentifier];
     else
-        result =  nil;
+        result = nil;
 
     return result;
 }

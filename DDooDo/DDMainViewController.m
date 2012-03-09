@@ -52,6 +52,10 @@
     [self setTodoTableView:nil];
     [self setTodoTextField:nil];
     [self setTodayLabel:nil];
+    
+    [todoData saveData];
+    todoData = nil;
+    
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
