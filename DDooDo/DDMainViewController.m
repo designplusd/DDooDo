@@ -93,7 +93,8 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
+//    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (IBAction)dismissKeyboard:(id)sender {
