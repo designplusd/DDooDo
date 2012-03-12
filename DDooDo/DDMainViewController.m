@@ -30,6 +30,8 @@ NSTimer* tapTimer;
 
 int modifyingRow;
 
+#pragma mark - Banner
+
 - (void) bannerViewDidLoad:(ADBannerView *)abanner{
     if(!self.bannerIsVisible){
         [UIView beginAnimations:@"animatedAdBannerOn" context:NULL];
@@ -48,6 +50,16 @@ int modifyingRow;
     }
 }
 
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if (UIInterfaceOrientationIsLandscape([UIDevice currentDevice].orientation)) {
+		[banner setCurrentContentSizeIdentifier: ADBannerContentSizeIdentifierLandscape];
+	} else {
+		[banner setCurrentContentSizeIdentifier: ADBannerContentSizeIdentifierPortrait];            
+	}   
+}
+
+#pragma mark - Main view
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
