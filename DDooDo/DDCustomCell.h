@@ -11,4 +11,5 @@
 @interface DDCustomCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel *todoLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *strikeThroughImage;
+@property (nonatomic, weak) IBOutlet UIButton *modifyButton;
 @end
