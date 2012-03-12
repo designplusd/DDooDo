@@ -21,6 +21,7 @@
 @property (nonatomic, retain)IBOutlet ADBannerView *banner; 
 
 - (void) drawCell: (DDCustomCell*) cell : (NSIndexPath*) indexPath; 
+- (int) GetRemainToDoCount;
  
 //@property (nonatomic) int tapCount;
 

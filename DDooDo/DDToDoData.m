@@ -59,7 +59,7 @@
     for (int i = 0; i < _data.count; ++i)
     {
         DDTodoItem *curItem = [_data objectAtIndex:i];
-        if (curItem.isChecked == FALSE)
+        if (curItem.isChecked == NO)
             ++cnt;
     }
     

@@ -70,8 +70,6 @@ int modifyingRow;
     todoData = [[DDToDoData alloc]init];
     [todoData loadData];
 
-    [UIApplication sharedApplication].applicationIconBadgeNumber = todoData.remainToDoCount;
-
     [self displayDate];
 }
 
@@ -82,9 +80,6 @@ int modifyingRow;
     [self setTodayLabel:nil];
     
     [todoData saveData];
-    
-    [UIApplication sharedApplication].applicationIconBadgeNumber = todoData.remainToDoCount;
-    
     todoData = nil;
     
     [super viewDidUnload];
@@ -171,8 +166,6 @@ int modifyingRow;
     
     [todoData saveData];
     
-    [UIApplication sharedApplication].applicationIconBadgeNumber = todoData.remainToDoCount;
-    
     // 입력창 초기화
     todoTextField.text = @"";
 }
@@ -190,6 +183,11 @@ int modifyingRow;
         // 입력창 초기화
         todoTextField.text = @"";
     }
+}
+
+- (int) GetRemainToDoCount
+{
+    return todoData.remainToDoCount;
 }
 
 #pragma mark - Table View
