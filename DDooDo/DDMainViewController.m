@@ -29,6 +29,7 @@ int tapCount, tappedRow, doubleTapRow;
 NSTimer* tapTimer;
 
 int modifyingRow;
+bool isLineDeleting = false;
 
 #pragma mark - Banner
 
@@ -168,6 +169,9 @@ int modifyingRow;
 }
 
 - (IBAction)editButtonTouchDown:(UIButton *)sender {
+    
+    isLineDeleting = false;
+    
     if (self.todoTableView.isEditing){
         [self.todoTableView setEditing:FALSE animated:TRUE];
     }
@@ -267,7 +271,7 @@ int modifyingRow;
     }
     
     // 수정 버튼 표시하기
-    if(todoTableView.isEditing == YES)
+    if(todoTableView.isEditing == YES && !isLineDeleting)
     {
         [cell.modifyButton setHidden:NO];
     }
@@ -275,6 +279,11 @@ int modifyingRow;
     {
         [cell.modifyButton setHidden:YES];
     }
+}
+
+-(void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    isLineDeleting = true;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
