@@ -50,13 +50,13 @@ int modifyingRow;
     }
 }
 
--(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+- (void)rotateBanner
 {
     if (UIInterfaceOrientationIsLandscape([UIDevice currentDevice].orientation)) {
 		[banner setCurrentContentSizeIdentifier: ADBannerContentSizeIdentifierLandscape];
 	} else {
 		[banner setCurrentContentSizeIdentifier: ADBannerContentSizeIdentifierPortrait];            
-	}   
+	}
 }
 
 #pragma mark - Main view
@@ -96,6 +96,16 @@ int modifyingRow;
     
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self rotateBanner];
+}
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self rotateBanner];   
 }
 
 // 3초마다 불려오는 메서드 
