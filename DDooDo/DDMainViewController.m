@@ -77,7 +77,7 @@ int modifyingRow;
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTime:) userInfo:nil repeats:YES]; 
     
     [todayLabel setFont:[UIFont fontWithName:@"Nanum Pen Script" size:24.0f]];
-    [todoTextField setFont:[UIFont fontWithName:@"Nanum Pen Script" size:22.0f]];
+    [todoTextField setFont:[UIFont fontWithName:@"Nanum Pen Script" size:26.0f]];
     
     todoData = [[DDToDoData alloc]init];
     [todoData loadData];
@@ -191,6 +191,9 @@ int modifyingRow;
     
     // 입력창 초기화
     todoTextField.text = @"";
+    
+    // 입력된 데이터가 있는 하단으로 스크롤 시키기
+    [[self todoTableView] scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 
 - (void)modifyObject:(UITextField *)sender
@@ -240,7 +243,7 @@ int modifyingRow;
 - (void) drawCell: (DDCustomCell*) cell : (NSIndexPath*) indexPath
 {
     // 할일 표시하기
-    [cell.todoLabel setFont:[UIFont fontWithName:@"Nanum Pen Script" size:20]];
+    [cell.todoLabel setFont:[UIFont fontWithName:@"Nanum Pen Script" size:26]];
     cell.todoLabel.text = [todoData getItem:(indexPath.row)].title;
     
     
