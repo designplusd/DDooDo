@@ -289,11 +289,72 @@ int modifyingRow;
     [todoData saveData];
 }
 
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+ - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath
+ {
+     DDCustomCell *cell = (DDCustomCell *) [tableView cellForRowAtIndexPath:indexPath];
+     
+     // checking for double taps here
+     if (tapCount == 1 && tapTimer != nil && tappedRow == indexPath.row)
+     {
+         // double tap - Put your double tap code here
+         [tapTimer invalidate];
+         tapTimer = nil;
+         
+         doubleTapRow = tappedRow;
+         
+         [cell setSelected:NO animated:YES];  // maybe, maybe not
+         
+         // 취소 데이터 반전
+         if([todoData getItem:(indexPath.row)].isChecked == YES){
+             [todoData getItem:(indexPath.row)].isChecked = NO;
+         }
+         else {
+             [todoData getItem:(indexPath.row)].isChecked = YES;
+         }
+         
+         // 취소선 그리기
+         [self drawCell:cell :indexPath];
+  
+         tapCount = 0;
+         tappedRow = -1;
+     }
+     else if (tapCount == 0)
+     {
+         // This is the first tap. If there is no tap till tapTimer is fired, it is a single tap
+         tapCount = 1;
+         tappedRow = indexPath.row;
+         tapTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self 
+                                                   selector:@selector(tapTimerFired:) 
+                                                   userInfo:nil repeats:NO];
+     }
+     else if (tappedRow != indexPath.row)
+     {
+         // tap on new row
+         tapCount = 0;
+         if (tapTimer != nil)
+         {
+             [tapTimer invalidate];
+             tapTimer = nil;
+         }
+     }
+ }
+
+- (void)tapTimerFired:(NSTimer *)aTimer{
+    if (tapTimer != nil)
+    {
+        tapCount = 0;
+        tappedRow = -1;
+    }
 }
+
+- (IBAction)cellModifyTouched:(UIButton *)sender {
+    modifyingRow = sender.tag;
+    
+    [todoTextField becomeFirstResponder];
+    todoTextField.text = [todoData getItem:modifyingRow].title;
+    
+    NSLog(@"Selected row: %d", sender.tag);
+}
+
 
 @end

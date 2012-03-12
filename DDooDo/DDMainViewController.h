@@ -11,7 +11,18 @@
 #import "DDToDoData.h"
 #import <iAd/iAd.h>
 
-@interface DDMainViewController : UIViewController <UITableViewDelegate>
+@interface DDMainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
+    ADBannerView *banner;
+    // int tapCount;
+}
+
+@property (nonatomic, assign)BOOL bannerIsVisible;
+@property (nonatomic, retain)IBOutlet ADBannerView *banner; 
+
+- (void) drawCell: (DDCustomCell*) cell : (NSIndexPath*) indexPath; 
+ 
+//@property (nonatomic) int tapCount;
 
 @end
 
