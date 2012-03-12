@@ -144,6 +144,7 @@ int modifyingRow;
         [self modifyObject:sender];
     }
 }
+
 - (IBAction)editButtonTouchDown:(UIButton *)sender {
     if (self.todoTableView.isEditing){
         [self.todoTableView setEditing:FALSE animated:TRUE];
@@ -263,6 +264,8 @@ int modifyingRow;
     {
         [todoData removeItem:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [todoData saveData];
     } 
     else if (editingStyle == UITableViewCellEditingStyleInsert) 
     {
@@ -310,6 +313,8 @@ int modifyingRow;
              [todoData getItem:(indexPath.row)].isChecked = YES;
          }
          
+         [todoData saveData];
+         
          // 취소선 그리기
          [self drawCell:cell :indexPath];
   
@@ -353,6 +358,5 @@ int modifyingRow;
     
     NSLog(@"Selected row: %d", sender.tag);
 }
-
 
 @end
