@@ -12,6 +12,7 @@
 {
     DDToDoData *todoData;
 }
+
 @property (strong, nonatomic) IBOutlet UITextField *todoTextField;
 @property (strong, nonatomic) IBOutlet UITableView *todoTableView;
 @property (strong, nonatomic) IBOutlet UILabel *todayLabel;
@@ -21,6 +22,32 @@
 @synthesize todoTextField;
 @synthesize todoTableView;
 @synthesize todayLabel;
+
+@synthesize banner, bannerIsVisible;
+
+int tapCount, tappedRow, doubleTapRow;
+NSTimer* tapTimer;
+
+int modifyingRow;
+
+- (void) bannerViewDidLoad:(ADBannerView *)abanner{
+    if(!self.bannerIsVisible){
+        [UIView beginAnimations:@"animatedAdBannerOn" context:NULL];
+        banner.frame = CGRectOffset(banner.frame,0.0 , 50.0);
+        [UIView commitAnimations];
+        self.bannerIsVisible = YES;
+    }
+}
+
+- (void) bannerView:(ADBannerView *)aBanner didFailToReceiveAdWithError:(NSError *)error{
+    if(!self.bannerIsVisible){
+        [UIView beginAnimations:@"animatedAdBannerOff" context:NULL];
+        banner.frame = CGRectOffset(banner.frame,0.0 , -320.0);
+        [UIView commitAnimations];
+        self.bannerIsVisible = NO;
+    }
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,8 +64,8 @@
     
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTime:) userInfo:nil repeats:YES]; 
     
-    [todayLabel setFont:[UIFont fontWithName:@"Nanum Pen Script" size:20]];
-    [todoTextField setFont:[UIFont fontWithName:@"Nanum Pen Script" size:20]];
+    [todayLabel setFont:[UIFont fontWithName:@"Nanum Pen Script" size:24.0f]];
+    [todoTextField setFont:[UIFont fontWithName:@"Nanum Pen Script" size:22.0f]];
     
     todoData = [[DDToDoData alloc]init];
     [todoData loadData];
@@ -102,13 +129,30 @@
 }
 
 - (IBAction)textfieldDone:(UITextField *)sender {
-    [self insertNewObject:sender.text];
+    
+    if(sender.text.length == 0)
+    {
+        return;
+    }
+    
+    if(todoTableView.isEditing == FALSE)
+    {
+        [self insertNewObject:sender.text];
+    }
+    else 
+    {
+        [self modifyObject:sender];
+    }
 }
 - (IBAction)editButtonTouchDown:(UIButton *)sender {
-    if (self.todoTableView.isEditing)
+    if (self.todoTableView.isEditing){
         [self.todoTableView setEditing:FALSE animated:TRUE];
-    else
+    }
+    else{
         [self.todoTableView setEditing:TRUE animated:TRUE];
+    }
+    
+    [todoTableView reloadData];
 }
 
 - (void)insertNewObject:(id)sender
@@ -126,6 +170,21 @@
     todoTextField.text = @"";
 }
 
+- (void)modifyObject:(UITextField *)sender
+{
+    if(todoTableView.isEditing == TRUE)
+    {
+        [todoData getItem:modifyingRow].title = sender.text;
+        [todoTableView setEditing:NO animated:YES];
+        
+        [todoTableView reloadData];
+        [todoData saveData];
+        
+        // 입력창 초기화
+        todoTextField.text = @"";
+    }
+}
+
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -141,34 +200,50 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DDCustomCell *customCell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    [customCell.todoLabel setFont:[UIFont fontWithName:@"Nanum Pen Script" size:20]];
+
+    [self drawCell:customCell :indexPath];
     
-    customCell.todoLabel.text = [todoData getItem:(indexPath.row)].title;
+    // 수정 버튼을 누를때 사용하기 위해 row를 넣어둔다.
+    customCell.modifyButton.tag = indexPath.row;
+
+    return customCell;
+}
+
+- (void) drawCell: (DDCustomCell*) cell : (NSIndexPath*) indexPath
+{
+    // 할일 표시하기
+    [cell.todoLabel setFont:[UIFont fontWithName:@"Nanum Pen Script" size:20]];
+    cell.todoLabel.text = [todoData getItem:(indexPath.row)].title;
     
     
     // 취소선 그리기
     
-//    if([todoData getItem:(indexPath.row)].isChecked == TRUE)
-//    {
-        customCell.strikeThroughImage.alpha = 0.5;
+    if([todoData getItem:(indexPath.row)].isChecked == YES)
+    {
+        cell.strikeThroughImage.alpha = 0.5;
         
-        CGSize textLabelSize = [customCell.todoLabel.text sizeWithFont:customCell.todoLabel.font /*constrainedToSize:constrainedSize*/];
+        CGSize textLabelSize = [cell.todoLabel.text sizeWithFont:cell.todoLabel.font /*constrainedToSize:constrainedSize*/];
         
         NSLog(@"text label width: %f", textLabelSize.width);
         
-        CGRect frame = customCell.strikeThroughImage.frame;
+        CGRect frame = cell.strikeThroughImage.frame;
         frame.size.width = textLabelSize.width;
-        customCell.strikeThroughImage.frame = frame;
-        
-        // customCell.strikeThroughImage.viewPrintFormatter
-        
-        //textLabelSize.width
-//    }
-//    else {
-//        customCell.strikeThroughImage.alpha = 0;
-//    }
-
-    return customCell;
+        cell.strikeThroughImage.frame = frame;
+    }
+    else 
+    {
+        cell.strikeThroughImage.alpha = 0;
+    }
+    
+    // 수정 버튼 표시하기
+    if(todoTableView.isEditing == YES)
+    {
+        [cell.modifyButton setHidden:NO];
+    }
+    else
+    {
+        [cell.modifyButton setHidden:YES];
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -179,10 +254,13 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    if (editingStyle == UITableViewCellEditingStyleDelete) 
+    {
         [todoData removeItem:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+    } 
+    else if (editingStyle == UITableViewCellEditingStyleInsert) 
+    {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
@@ -192,7 +270,6 @@
  {
      int fromIndex = fromIndexPath.row;
      int toIndex = toIndexPath.row;
-
      
      if (fromIndex == toIndex)
          return;
@@ -211,6 +288,73 @@
  // Return NO if you do not want the item to be re-orderable.
  return YES;
  }
+
+ - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath
+ {
+     DDCustomCell *cell = (DDCustomCell *) [tableView cellForRowAtIndexPath:indexPath];
+     
+     // checking for double taps here
+     if (tapCount == 1 && tapTimer != nil && tappedRow == indexPath.row)
+     {
+         // double tap - Put your double tap code here
+         [tapTimer invalidate];
+         tapTimer = nil;
+         
+         doubleTapRow = tappedRow;
+         
+         [cell setSelected:NO animated:YES];  // maybe, maybe not
+         
+         // 취소 데이터 반전
+         if([todoData getItem:(indexPath.row)].isChecked == YES){
+             [todoData getItem:(indexPath.row)].isChecked = NO;
+         }
+         else {
+             [todoData getItem:(indexPath.row)].isChecked = YES;
+         }
+         
+         // 취소선 그리기
+         [self drawCell:cell :indexPath];
+  
+         tapCount = 0;
+         tappedRow = -1;
+     }
+     else if (tapCount == 0)
+     {
+         // This is the first tap. If there is no tap till tapTimer is fired, it is a single tap
+         tapCount = 1;
+         tappedRow = indexPath.row;
+         tapTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self 
+                                                   selector:@selector(tapTimerFired:) 
+                                                   userInfo:nil repeats:NO];
+     }
+     else if (tappedRow != indexPath.row)
+     {
+         // tap on new row
+         tapCount = 0;
+         if (tapTimer != nil)
+         {
+             [tapTimer invalidate];
+             tapTimer = nil;
+         }
+     }
+ }
+
+- (void)tapTimerFired:(NSTimer *)aTimer{
+    if (tapTimer != nil)
+    {
+        tapCount = 0;
+        tappedRow = -1;
+    }
+}
+
+- (IBAction)cellModifyTouched:(UIButton *)sender {
+    modifyingRow = sender.tag;
+    
+    [todoTextField becomeFirstResponder];
+    todoTextField.text = [todoData getItem:modifyingRow].title;
+    
+    NSLog(@"Selected row: %d", sender.tag);
+}
 
 
 @end

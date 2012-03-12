@@ -11,6 +11,7 @@
 @implementation DDCustomCell
 @synthesize todoLabel;
 @synthesize strikeThroughImage;
+@synthesize modifyButton;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
