@@ -25,24 +25,9 @@
 		DB117DF21507395700CC8174 /* DDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB117DF11507395700CC8174 /* DDAppDelegate.m */; };
 		DB117DF51507395700CC8174 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB117DF31507395700CC8174 /* MainStoryboard_iPhone.storyboard */; };
 		DB117DF81507395700CC8174 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB117DF61507395700CC8174 /* MainStoryboard_iPad.storyboard */; };
-		DB117E031507395700CC8174 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117E021507395700CC8174 /* SenTestingKit.framework */; };
-		DB117E041507395800CC8174 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117DE11507395700CC8174 /* UIKit.framework */; };
-		DB117E051507395800CC8174 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB117DE31507395700CC8174 /* Foundation.framework */; };
-		DB117E0D1507395800CC8174 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB117E0B1507395800CC8174 /* InfoPlist.strings */; };
-		DB117E101507395800CC8174 /* DDooDoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB117E0F1507395800CC8174 /* DDooDoTests.m */; };
 		DBAB7DF11509D78600C222FB /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAB7DF01509D78600C222FB /* EventKit.framework */; };
 		DBFB073515074A7800844A72 /* DDToDoData.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFB073415074A7800844A72 /* DDToDoData.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		DB117E061507395800CC8174 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DB117DD41507395700CC8174 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DB117DDC1507395700CC8174;
-			remoteInfo = DDooDo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0352B237150DD6A2001FC755 /* Paper_texture1_960.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paper_texture1_960.jpg; sourceTree = "<group>"; };
@@ -69,12 +54,7 @@
 		DB117DF11507395700CC8174 /* DDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDAppDelegate.m; sourceTree = "<group>"; };
 		DB117DF41507395700CC8174 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		DB117DF71507395700CC8174 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		DB117E011507395700CC8174 /* DDooDoTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DDooDoTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB117E021507395700CC8174 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		DB117E0A1507395800CC8174 /* DDooDoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DDooDoTests-Info.plist"; sourceTree = "<group>"; };
-		DB117E0C1507395800CC8174 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DB117E0E1507395800CC8174 /* DDooDoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDooDoTests.h; sourceTree = "<group>"; };
-		DB117E0F1507395800CC8174 /* DDooDoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDooDoTests.m; sourceTree = "<group>"; };
 		DBAB7DF01509D78600C222FB /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		DBFB073315074A7800844A72 /* DDToDoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDToDoData.h; sourceTree = "<group>"; };
 		DBFB073415074A7800844A72 /* DDToDoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDToDoData.m; sourceTree = "<group>"; };
@@ -93,16 +73,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB117DFD1507395700CC8174 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DB117E031507395700CC8174 /* SenTestingKit.framework in Frameworks */,
-				DB117E041507395800CC8174 /* UIKit.framework in Frameworks */,
-				DB117E051507395800CC8174 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -110,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				DB117DE71507395700CC8174 /* DDooDo */,
-				DB117E081507395800CC8174 /* DDooDoTests */,
 				DB117DE01507395700CC8174 /* Frameworks */,
 				DB117DDE1507395700CC8174 /* Products */,
 			);
@@ -120,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				DB117DDD1507395700CC8174 /* DDooDo.app */,
-				DB117E011507395700CC8174 /* DDooDoTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,25 +142,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DB117E081507395800CC8174 /* DDooDoTests */ = {
-			isa = PBXGroup;
-			children = (
-				DB117E0E1507395800CC8174 /* DDooDoTests.h */,
-				DB117E0F1507395800CC8174 /* DDooDoTests.m */,
-				DB117E091507395800CC8174 /* Supporting Files */,
-			);
-			path = DDooDoTests;
-			sourceTree = "<group>";
-		};
-		DB117E091507395800CC8174 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DB117E0A1507395800CC8174 /* DDooDoTests-Info.plist */,
-				DB117E0B1507395800CC8174 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -212,25 +161,6 @@
 			productName = DDooDo;
 			productReference = DB117DDD1507395700CC8174 /* DDooDo.app */;
 			productType = "com.apple.product-type.application";
-		};
-		DB117E001507395700CC8174 /* DDooDoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DB117E161507395800CC8174 /* Build configuration list for PBXNativeTarget "DDooDoTests" */;
-			buildPhases = (
-				DB117DFC1507395700CC8174 /* Sources */,
-				DB117DFD1507395700CC8174 /* Frameworks */,
-				DB117DFE1507395700CC8174 /* Resources */,
-				DB117DFF1507395700CC8174 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DB117E071507395800CC8174 /* PBXTargetDependency */,
-			);
-			name = DDooDoTests;
-			productName = DDooDoTests;
-			productReference = DB117E011507395700CC8174 /* DDooDoTests.octest */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -255,7 +185,6 @@
 			projectRoot = "";
 			targets = (
 				DB117DDC1507395700CC8174 /* DDooDo */,
-				DB117E001507395700CC8174 /* DDooDoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -278,31 +207,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB117DFE1507395700CC8174 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DB117E0D1507395800CC8174 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		DB117DFF1507395700CC8174 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DB117DD91507395700CC8174 /* Sources */ = {
@@ -317,23 +222,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB117DFC1507395700CC8174 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DB117E101507395800CC8174 /* DDooDoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DB117E071507395800CC8174 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DB117DDC1507395700CC8174 /* DDooDo */;
-			targetProxy = DB117E061507395800CC8174 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DB117DEA1507395700CC8174 /* InfoPlist.strings */ = {
@@ -358,14 +247,6 @@
 				DB117DF71507395700CC8174 /* en */,
 			);
 			name = MainStoryboard_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-		DB117E0B1507395800CC8174 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB117E0C1507395800CC8174 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -448,40 +329,6 @@
 			};
 			name = Release;
 		};
-		DB117E171507395800CC8174 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DDooDo.app/DDooDo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DDooDo/DDooDo-Prefix.pch";
-				INFOPLIST_FILE = "DDooDoTests/DDooDoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		DB117E181507395800CC8174 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DDooDo.app/DDooDo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DDooDo/DDooDo-Prefix.pch";
-				INFOPLIST_FILE = "DDooDoTests/DDooDoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -499,15 +346,6 @@
 			buildConfigurations = (
 				DB117E141507395800CC8174 /* Debug */,
 				DB117E151507395800CC8174 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DB117E161507395800CC8174 /* Build configuration list for PBXNativeTarget "DDooDoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DB117E171507395800CC8174 /* Debug */,
-				DB117E181507395800CC8174 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
