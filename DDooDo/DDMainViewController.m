@@ -77,8 +77,18 @@ bool isLineDeleting = false;
     
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTime:) userInfo:nil repeats:YES]; 
     
-    [todayLabel setFont:[UIFont fontWithName:@"Nanum Pen Script" size:24.0f]];
-    [todoTextField setFont:[UIFont fontWithName:@"Nanum Pen Script" size:26.0f]];
+    NSString * language = [[NSLocale preferredLanguages] objectAtIndex:0];
+    
+    if([language isEqualToString:@"en"] || [language isEqualToString:@"kr"])
+    {
+        [todayLabel setFont:[UIFont fontWithName:@"Nanum Pen Script" size:24.0f]];
+        [todoTextField setFont:[UIFont fontWithName:@"Nanum Pen Script" size:26.0f]];
+    }
+    else 
+    {
+        [todayLabel setFont:[UIFont systemFontOfSize:22.0f]];
+        [todoTextField setFont:[UIFont systemFontOfSize:20.0f]];
+    }
     
     todoData = [[DDToDoData alloc]init];
     [todoData loadData];
@@ -247,7 +257,18 @@ bool isLineDeleting = false;
 - (void) drawCell: (DDCustomCell*) cell : (NSIndexPath*) indexPath
 {
     // 할일 표시하기
-    [cell.todoLabel setFont:[UIFont fontWithName:@"Nanum Pen Script" size:26]];
+    
+    NSString * language = [[NSLocale preferredLanguages] objectAtIndex:0];
+    
+    if([language isEqualToString:@"en"] || [language isEqualToString:@"kr"])
+    {
+        [cell.todoLabel setFont:[UIFont fontWithName:@"Nanum Pen Script" size:26]];
+    }
+    else 
+    {
+        [cell.todoLabel setFont:[UIFont systemFontOfSize:20.0f]];
+    }
+    
     cell.todoLabel.text = [todoData getItem:(indexPath.row)].title;
     
     
